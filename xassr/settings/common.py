@@ -199,6 +199,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'xassr.apps.home',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
