@@ -20,3 +20,5 @@ celerybeat-schedule
 venv
 
 .idea
+
+xassr/static/
