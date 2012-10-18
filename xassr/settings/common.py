@@ -36,7 +36,7 @@ TEMPLATE_DEBUG = DEBUG
 ########## MANAGER CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ('Your Name', 'your_email@example.com'),
+    ('Ryuji TSUTSUI', 'ryu22e@gmail.com'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -200,6 +200,7 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'xassr.apps.home',
+    'xassr.apps.accounts',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -258,3 +259,5 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.template.TemplateFilter',
 ]
 ########## END COMPRESSION CONFIGURATION
+
+AUTH_PROFILE_MODULE = 'accounts.XassrUserProfile'
