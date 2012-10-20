@@ -9,6 +9,7 @@ admin.autodiscover()
 # See: https://docs.djangoproject.com/en/dev/topics/http/urls/
 urlpatterns = patterns('',
     url(r'^$', 'xassr.apps.home.views.home', name='home'),
+    url(r'^accounts/', include('xassr.apps.accounts.urls')),
 
     # Admin panel and documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

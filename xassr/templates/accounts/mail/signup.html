@@ -1,0 +1,12 @@
+{{ screen_name }}さん こんにちは。
+
+Xassr（ザサー）にご登録ありがとうございます。
+メールアドレスの確認のため、24時間以内に以下のURLにアクセスしてください。
+
+{% if is_secure %}https{% else %}http{% endif %}://{{ site_name }}/accounts/email/verify/{{ token }}/
+
+メールアドレスの確認が完了するまで、Xassrをご利用することはできません。
+
+* このメールに心当たりない場合は、このメールを破棄してください。
+
+{% include 'common/mail/signature.html' %}

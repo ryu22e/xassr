@@ -39,6 +39,9 @@ ADMINS = (
     ('Ryuji TSUTSUI', 'ryu22e@gmail.com'),
 )
 
+# Default from_email:
+DEFAULT_FROM_EMAIL = "ryu22e@gmail.com"
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 ########## END MANAGER CONFIGURATION
