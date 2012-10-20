@@ -2,11 +2,9 @@
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
-from django.core.mail import send_mail
 from django.template import Context
 from django.template.loader import get_template
 from django.contrib.sites.models import get_current_site
-from django.conf import settings
 from xassr.apps.accounts.forms import XassrUserCreationForm
 
 def signup(request):

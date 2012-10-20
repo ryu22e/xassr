@@ -9,8 +9,10 @@ class XassrUserProfile(models.Model):
     token = models.CharField(max_length=50)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
     def __unicode__(self):
         return self.screen_name
+
 
 def create_user_profile(sender, instance, created, **kwargs):
     """

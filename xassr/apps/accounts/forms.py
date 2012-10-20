@@ -10,6 +10,7 @@ class XassrUserCreationForm(UserCreationForm):
     username = forms.CharField(label=u'ユーザーID')
     screen_name = forms.CharField(label=u'表示名', required=True)
     password1 = forms.CharField(label=u'パスワード', widget=widgets.PasswordInput())
+
     class Meta(UserCreationForm.Meta):
         fields = ('username', 'screen_name', 'email', 'password1', 'password2')
 

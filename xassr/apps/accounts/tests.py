@@ -22,7 +22,7 @@ class AccountsTest(TestCase):
             'password1': 'password',
             'password2': 'password',
             'email': 'test@ryu22e.org',
-            }
+        }
         r = self.client.post('/accounts/signup/', data)
         self.assertRedirects(r, '/')
         u = User.objects.filter(username=data['username'])
@@ -48,7 +48,7 @@ class AccountsTest(TestCase):
             'password1': 'password',
             'password2': 'password',
             'email': 'test@ryu22e.org',
-            }
+        }
         r = self.client.post('/accounts/signup/', data1)
         self.assertRedirects(r, '/')
         u = User.objects.filter(username=data1['username'])
@@ -60,6 +60,6 @@ class AccountsTest(TestCase):
             'password1': 'password',
             'password2': 'password',
             'email': 'test@ryu22e.org',
-            }
+        }
         r = self.client.post('/accounts/signup/', data2)
         self.assertFormError(r, 'form', 'email', u'このメールアドレスは既に使われています。')
