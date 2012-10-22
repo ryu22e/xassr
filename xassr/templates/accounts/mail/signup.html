@@ -3,7 +3,7 @@
 Xassr（ザサー）にご登録ありがとうございます。
 メールアドレスの確認のため、24時間以内に以下のURLにアクセスしてください。
 
-{% if is_secure %}https{% else %}http{% endif %}://{{ site_name }}/accounts/email/verify/{{ token }}/
+{% if is_secure %}https{% else %}http{% endif %}://{{ site_name }}/accounts/email/verify/{{ token|urlencode }}/
 
 メールアドレスの確認が完了するまで、Xassrをご利用することはできません。
 
