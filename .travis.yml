@@ -11,4 +11,4 @@ script:
     - export DJANGO_SETTINGS_MODULE="xassr.settings.ci"
     - export DATABASE_URL="postgres://localhost/xassr"
     - python manage.py syncdb --noinput --migrate
-    - python manage.py test -v2 `ls -F xassr/apps | grep / | sed -e "s/\// /g" | tr -d '\n'`
+    - make test
