@@ -16,7 +16,7 @@ class XassrUserCreationForm(UserCreationForm):
 
     def save(self, commit=True, token_generator=default_token_generator):
         user = super(XassrUserCreationForm, self).save(commit=False)
-        if (commit):
+        if commit:
             user.screen_name = self.cleaned_data['screen_name']
             user.token = token_generator.make_token(user)
             user.save()
@@ -25,7 +25,7 @@ class XassrUserCreationForm(UserCreationForm):
     def clean_email(self):
         value = self.cleaned_data['email']
         count = User.objects.filter(email=value).count()
-        if (count > 0):
+        if count > 0:
             raise forms.ValidationError(u'このメールアドレスは既に使われています。')
         else:
             return value
