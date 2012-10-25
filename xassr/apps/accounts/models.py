@@ -24,9 +24,9 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         # user is created, not changed
         data = {'user': instance}
-        if 'screen_name' in instance.__dict__:
+        if hasattr(instance, 'screen_name'):
             data['screen_name'] = instance.screen_name
-        if 'token' in instance.__dict__:
+        if hasattr(instance, 'token'):
             data['token'] = instance.token
         XassrUserProfile.objects.create(**data)
 
