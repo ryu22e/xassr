@@ -6,7 +6,8 @@ from django.db.models.signals import post_save
 class XassrUserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
     screen_name = models.CharField(max_length=30)
-    token = models.CharField(max_length=50)
+    token = models.CharField(max_length=50, db_index=True)
+    verified = models.BooleanField(default=False)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -5,6 +5,8 @@ from django.shortcuts import render_to_response
 from django.template import Context
 from django.template.loader import get_template
 from django.contrib.sites.models import get_current_site
+from django.contrib.auth.models import User
+from django.contrib.auth.tokens import default_token_generator
 from xassr.apps.accounts.forms import XassrUserCreationForm
 
 def signup(request):
@@ -29,3 +31,19 @@ def signup(request):
 
     c = RequestContext(request, {'form': form})
     return render_to_response('accounts/signup.html', c)
+
+def verify(request, token):
+    message = u'メールアドレスが確認できませんでした。'
+    try:
+        user = User.objects.filter(xassruserprofile__token__exact=token).get()
+    except User.DoesNotExist:
+        return HttpResponseRedirect('/')
+    else:
+        if user.is_active:
+            user_profile = user.get_profile()
+            user_profile.verified = True
+            user_profile.save()
+            message = u'メールアドレスが確認されました。'
+
+    c = RequestContext(request, {'message': message})
+    return render_to_response('accounts/verify.html', c)
