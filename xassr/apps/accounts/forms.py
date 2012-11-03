@@ -29,3 +29,10 @@ class XassrUserCreationForm(UserCreationForm):
             raise forms.ValidationError(u'このメールアドレスは既に使われています。')
         else:
             return value
+
+    def clean_username(self):
+        value = self.cleaned_data['username']
+        if ' ' in value:
+            raise forms.ValidationError(u'ユーザーIDは空白を含めない英数字、記号で入力してください。')
+        else:
+            return value

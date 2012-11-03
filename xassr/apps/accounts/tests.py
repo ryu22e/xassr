@@ -40,6 +40,20 @@ class AccountsTest(TestCase):
         self.assertIsNotNone(outbox.from_email)
         self.assertEqual(outbox.subject, u'メールアドレスのご確認')
 
+    def test_signup_username_contains_whitespace(self):
+        """
+         Tests that username contains whitespace is not accepted.
+        """
+        data = {
+            'screen_name': 'Taro YAMADA',
+            'username': 't yamada',
+            'password1': 'password',
+            'password2': 'password',
+            'email': 'test@ryu22e.org',
+            }
+        r = self.client.post('/accounts/signup/', data)
+        self.assertFormError(r, 'form', 'username', u'ユーザーIDは空白を含めない英数字、記号で入力してください。')
+
     def test_signup_duplicated_email(self):
         """
         Tests that duplicated email is not accepted.
