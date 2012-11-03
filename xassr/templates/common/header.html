@@ -1,6 +1,6 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-        <div class="container-fluid">
+        <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -8,13 +8,6 @@
             </a>
             <a class="brand" href="#">Xassr</a>
             <div class="nav-collapse collapse">
-                <p class="navbar-text pull-right">
-                    {% if user.is_authenticated %}
-                        Logged in as <a href="#" class="navbar-link">Username</a>
-                    {% else %}
-                        <a href="{% url xassr.apps.accounts.views.signup %}">Sign up</a>
-                    {% endif %}
-                </p>
                 <ul class="nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#friend">つながり</a></li>
@@ -25,6 +18,13 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
+            <p class="navbar-text pull-right">
+                {% if user.is_authenticated %}
+                    Logged in as <a href="#" class="navbar-link">Username</a>
+                {% else %}
+                    <a href="{% url xassr.apps.accounts.views.signup %}">Sign up</a>
+                {% endif %}
+            </p>
         </div>
     </div>
 </div>
