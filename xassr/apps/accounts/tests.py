@@ -15,7 +15,7 @@ from xassr.apps.accounts.models import XassrUserProfile
 class AccountsTest(TestCase):
     def test_signup(self):
         """
-        Tests signup.
+        Tests that signup is done.
         """
         data = {
             'screen_name': 'Taro YAMADA',
@@ -42,7 +42,7 @@ class AccountsTest(TestCase):
 
     def test_signup_duplicated_email(self):
         """
-        Test duplicated email.
+        Tests that duplicated email is not accepted.
         """
         data1 = {
             'screen_name': 'Taro YAMADA',
@@ -68,7 +68,7 @@ class AccountsTest(TestCase):
 
     def test_verify_email(self):
         """
-        Test verify email.
+        Tests that verify email is done.
         """
         user = User.objects.create_user(username='test')
         token = default_token_generator.make_token(user)
@@ -87,7 +87,7 @@ class AccountsTest(TestCase):
 
     def test_verify_email_not_exist_user(self):
         """
-        Test verify email if user is not found.
+        Tests that verify email is not done if user is not found.
         """
         user = User.objects.create_user(username='test')
         token = default_token_generator.make_token(user)
@@ -103,14 +103,14 @@ class AccountsTest(TestCase):
 
     def test_verify_email_with_wrong_token(self):
         """
-        Test verify with wrong token.
+        Tests that wrong token is not accepted.
         """
         r = self.client.get('/accounts/verify/{0}/'.format('wrong_token'))
         self.assertRedirects(r, '/')
 
     def test_verify_email_not_active_user(self):
         """
-        Test verify with invalid token.
+        Tests verify with invalid token.
         """
         user = User.objects.create_user(username='test')
         user.is_active = False
