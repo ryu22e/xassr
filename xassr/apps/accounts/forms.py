@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 class XassrUserCreationForm(UserCreationForm):
-    username = forms.CharField(label=u'ユーザーID')
+    username = forms.CharField(label=u'ユーザーID', help_text=u'空白を含めない英数字、記号で入力してください。')
     screen_name = forms.CharField(label=u'表示名', required=True)
     password1 = forms.CharField(label=u'パスワード', widget=widgets.PasswordInput())
 
