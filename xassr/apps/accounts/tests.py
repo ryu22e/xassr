@@ -85,22 +85,6 @@ class AccountsTest(TestCase):
         self.assertIsNotNone(user_profile2)
         self.assertEqual(user_profile2.verified, True)
 
-    def test_verify_email_not_exist_user(self):
-        """
-        Tests that verify email is not done if user is not found.
-        """
-        user = User.objects.create_user(username='test')
-        token = default_token_generator.make_token(user)
-        user.is_active = False
-        user.save()
-        user_profile = user.get_profile()
-        self.assertIsNotNone(user_profile)
-        user_profile.token = token
-        user_profile.save()
-
-        r = self.client.get('/accounts/verify/{0}/'.format("testtest"))
-        self.assertRedirects(r, '/')
-
     def test_verify_email_with_wrong_token(self):
         """
         Tests that wrong token is not accepted.
