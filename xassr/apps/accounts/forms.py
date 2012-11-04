@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 
 
 class XassrUserCreationForm(UserCreationForm):
-    username = forms.CharField(label=u'ユーザーID', help_text=u'空白を含めない英数字、記号で入力してください。')
-    screen_name = forms.CharField(label=u'表示名', required=True)
-    password1 = forms.CharField(label=u'パスワード', widget=widgets.PasswordInput())
+    username = forms.CharField(label=u"ユーザーID", help_text=u"空白を含めない英数字、記号で入力してください。")
+    screen_name = forms.CharField(label=u"表示名", required=True)
+    password1 = forms.CharField(label=u"パスワード", widget=widgets.PasswordInput())
 
     class Meta(UserCreationForm.Meta):
         fields = ('username', 'screen_name', 'email', 'password1', 'password2')
@@ -26,13 +26,13 @@ class XassrUserCreationForm(UserCreationForm):
         value = self.cleaned_data['email']
         count = User.objects.filter(email=value).count()
         if count > 0:
-            raise forms.ValidationError(u'このメールアドレスは既に使われています。')
+            raise forms.ValidationError(u"このメールアドレスは既に使われています。")
         else:
             return value
 
     def clean_username(self):
         value = self.cleaned_data['username']
         if ' ' in value:
-            raise forms.ValidationError(u'ユーザーIDは空白を含めない英数字、記号で入力してください。')
+            raise forms.ValidationError(u"ユーザーIDは空白を含めない英数字、記号で入力してください。")
         else:
             return value
