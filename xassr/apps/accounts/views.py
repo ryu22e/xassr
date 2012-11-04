@@ -24,7 +24,7 @@ def signup(request):
                 'site_name': current_site.name,
                 'token': user_profile.token,
             }
-            user.email_user(u'メールアドレスのご確認', t.render(Context(c)))
+            user.email_user(u"メールアドレスのご確認", t.render(Context(c)))
             return HttpResponseRedirect('/')
     else:
         form = XassrUserCreationForm()
@@ -33,7 +33,7 @@ def signup(request):
     return render_to_response('accounts/signup.html', c)
 
 def verify(request, token):
-    message = u'メールアドレスが確認できませんでした。'
+    message = u"メールアドレスが確認できませんでした。"
     try:
         user = User.objects.filter(xassruserprofile__token__exact=token).get()
     except User.DoesNotExist:
@@ -43,7 +43,7 @@ def verify(request, token):
             user_profile = user.get_profile()
             user_profile.verified = True
             user_profile.save()
-            message = u'メールアドレスが確認されました。'
+            message = u"メールアドレスが確認されました。"
 
     c = RequestContext(request, {'message': message})
     return render_to_response('accounts/verify.html', c)
