@@ -11,6 +11,8 @@
         <h2 class="form-signin-heading">サインイン</h2>
         {% csrf_token %}
         {{ form.as_p }}
+        <input type="hidden" name="next"
+               value="{% if next %}{{ next }}{% else %}{% url xassr.apps.home.views.home %}{% endif %}"/>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
     </form>
 {% endblock %}
