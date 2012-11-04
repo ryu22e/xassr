@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+
+{% block subtitle %}Sign in{% endblock %}
+
+{% block css %}
+    <link href="{{ STATIC_URL }}css/xassr-signin.less" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <form class="form-signin" method="POST" action=".">
+        <h2 class="form-signin-heading">サインイン</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    </form>
+{% endblock %}

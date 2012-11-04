@@ -6,4 +6,5 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns('',
     url(r'^signup/$', 'xassr.apps.accounts.views.signup'),
     url(r'^verify/(?P<token>.+)/$', 'xassr.apps.accounts.views.verify'),
+    url(r'^signin/$', 'django.contrib.auth.views.login', {'template_name' : 'accounts/signin.html'}),
 )

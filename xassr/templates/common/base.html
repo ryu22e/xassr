@@ -8,6 +8,7 @@
     {% compress css %}
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/xassr.less" rel="stylesheet">
+    {% block css %}css{% endblock %}
     <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
     {% endcompress %}
 
