@@ -3,9 +3,9 @@
 {% block subtitle %}Sign up{% endblock %}
 
 {% block content %}
-<form method="POST" action=".">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="登録" />
-</form>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="登録"/>
+    </form>
 {% endblock %}

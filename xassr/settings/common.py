@@ -1,6 +1,5 @@
 """Common settings and globals."""
 
-
 from datetime import timedelta
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
@@ -37,7 +36,7 @@ TEMPLATE_DEBUG = DEBUG
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
     ('Ryuji TSUTSUI', 'ryu22e@gmail.com'),
-)
+    )
 
 # Default from_email:
 DEFAULT_FROM_EMAIL = "ryu22e@gmail.com"
@@ -99,14 +98,14 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     normpath(join(DJANGO_ROOT, 'assets')),
-)
+    )
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
-)
+    )
 ########## END STATIC FILE CONFIGURATION
 
 
@@ -120,7 +119,7 @@ SECRET_KEY = r"c^^@rw!nk!zlh20ih72(k*4eyw12ghg@%7#&amp;&amp;^$gvhefittb#*"
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
     normpath(join(DJANGO_ROOT, 'fixtures')),
-)
+    )
 ########## END FIXTURE CONFIGURATION
 
 
@@ -135,18 +134,18 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
-)
+    )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-)
+    )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     normpath(join(DJANGO_ROOT, 'templates')),
-)
+    )
 ########## END TEMPLATE CONFIGURATION
 
 
@@ -162,7 +161,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-)
+    )
 ########## END MIDDLEWARE CONFIGURATION
 
 
@@ -188,7 +187,7 @@ DJANGO_APPS = (
     # Admin panel and documentation:
     'django.contrib.admin',
     'django.contrib.admindocs',
-)
+    )
 
 THIRD_PARTY_APPS = (
     # Database migration helpers:
@@ -199,12 +198,12 @@ THIRD_PARTY_APPS = (
 
     # Asynchronous task queue:
     'djcelery',
-)
+    )
 
 LOCAL_APPS = (
     'xassr.apps.home',
     'xassr.apps.accounts',
-)
+    )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

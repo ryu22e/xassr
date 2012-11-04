@@ -915,7 +915,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
-    outline: thin dotted  \9;
+    outline: thin dotted   \9;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
@@ -924,7 +924,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 input[type="radio"], input[type="checkbox"] {
     margin: 4px 0 0;
     *margin-top: 0;
-    margin-top: 1px  \9;
+    margin-top: 1px   \9;
     line-height: normal;
     cursor: pointer;
 }
@@ -1384,9 +1384,9 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
 
 input.search-query {
     padding-right: 14px;
-    padding-right: 4px  \9;
+    padding-right: 4px   \9;
     padding-left: 14px;
-    padding-left: 4px  \9;
+    padding-left: 4px   \9;
     margin-bottom: 0;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -2698,7 +2698,7 @@ button.close {
 }
 
 .btn:active, .btn.active {
-    background-color: #cccccc  \9;
+    background-color: #cccccc   \9;
 }
 
 .btn:first-child {
@@ -2725,7 +2725,7 @@ button.close {
 
 .btn.active, .btn:active {
     background-color: #e6e6e6;
-    background-color: #d9d9d9  \9;
+    background-color: #d9d9d9   \9;
     background-image: none;
     outline: 0;
     -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -2824,7 +2824,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-primary:active, .btn-primary.active {
-    background-color: #5e5e5e  \9;
+    background-color: #5e5e5e   \9;
 }
 
 .btn-warning {
@@ -2851,7 +2851,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-warning:active, .btn-warning.active {
-    background-color: #cc6600  \9;
+    background-color: #cc6600   \9;
 }
 
 .btn-danger {
@@ -2878,7 +2878,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-danger:active, .btn-danger.active {
-    background-color: #990000  \9;
+    background-color: #990000   \9;
 }
 
 .btn-success {
@@ -2905,7 +2905,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-success:active, .btn-success.active {
-    background-color: #1a873a  \9;
+    background-color: #1a873a   \9;
 }
 
 .btn-info {
@@ -2932,7 +2932,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-info:active, .btn-info.active {
-    background-color: #264c73  \9;
+    background-color: #264c73   \9;
 }
 
 .btn-inverse {
@@ -2959,7 +2959,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .btn-inverse:active, .btn-inverse.active {
-    background-color: #5e5e5e  \9;
+    background-color: #5e5e5e   \9;
 }
 
 button.btn, input[type="submit"].btn {
@@ -3956,7 +3956,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 
 .navbar .btn-navbar:active, .navbar .btn-navbar.active {
-    background-color: #d9d9d9  \9;
+    background-color: #d9d9d9   \9;
 }
 
 .navbar .btn-navbar .icon-bar {
@@ -4178,7 +4178,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active {
-    background-color: #000000  \9;
+    background-color: #000000   \9;
 }
 
 .breadcrumb {
@@ -5447,7 +5447,7 @@ div.subnav li.dropdown.open .dropdown-toggle, div.subnav li.dropdown.open .dropd
 }
 
 .btn-inverse:active, .btn-inverse.active {
-    background-color: #000000  \9;
+    background-color: #000000   \9;
 }
 
 .table-bordered {

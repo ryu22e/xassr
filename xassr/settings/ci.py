@@ -1,8 +1,5 @@
 """Development settings and globals."""
 
-
-from os.path import join, normpath
-
 from postgresify import postgresify
 from memcacheify import memcacheify
 

@@ -50,7 +50,7 @@ class AccountsTest(TestCase):
             'password1': 'password',
             'password2': 'password',
             'email': 'test@ryu22e.org',
-            }
+        }
         r = self.client.post('/accounts/signup/', data)
         self.assertFormError(r, 'form', 'username', u'ユーザーIDは空白を含めない英数字、記号で入力してください。')
 

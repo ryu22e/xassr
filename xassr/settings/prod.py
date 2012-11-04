@@ -1,6 +1,5 @@
 """Production settings and globals."""
 
-
 from os import environ
 
 from memcacheify import memcacheify
@@ -79,7 +78,7 @@ CELERY_RESULT_BACKEND = 'amqp'
 # See: http://django-storages.readthedocs.org/en/latest/index.html
 INSTALLED_APPS += (
     'storages',
-)
+    )
 
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings
 STATICFILES_STORAGE = DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
@@ -98,7 +97,7 @@ AWS_QUERYSTRING_AUTH = False
 AWS_EXPIREY = 60 * 60 * 24 * 7
 AWS_HEADERS = {
     'Cache-Control': 'max-age=%d, s-maxage=%d, must-revalidate' % (AWS_EXPIREY,
-        AWS_EXPIREY)
+                                                                   AWS_EXPIREY)
 }
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
