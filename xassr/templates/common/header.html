@@ -23,7 +23,12 @@
             <!--/.nav-collapse -->
             <ul class="nav pull-right">
                 {% if user.is_authenticated %}
-                    <li>Logged in as <a href="#" class="navbar-link">Username</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ user.username }}</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/accounts/signout/">Sign out</a></li>
+                        </ul>
+                    </li>
                 {% else %}
                     <li><a href="{% url xassr.apps.accounts.views.signup %}">Sign up</a></li>
                     <li><a href="{% url django.contrib.auth.views.login %}">Sign in</a></li>
