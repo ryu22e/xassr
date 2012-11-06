@@ -40,6 +40,22 @@ class AccountsTest(TestCase):
         self.assertIsNotNone(outbox.from_email)
         self.assertEqual(outbox.subject, u'メールアドレスのご確認')
 
+    def test_signup_username_containts_html_tags(self):
+        """
+        Tests that username contains HTML tags.
+        """
+        data = {
+            'screen_name': '<b>Taro YAMADA</b>',
+            'username': 't_yamada',
+            'password1': 'password',
+            'password2': 'password',
+            'email': 'test@ryu22e.org',
+            }
+        r = self.client.post('/accounts/signup/', data)
+        self.assertEqual(len(mail.outbox), 1)
+        outbox = mail.outbox[0]
+        self.assertIn(u'<b>Taro YAMADA</b>', outbox.body)
+
     def test_signup_username_contains_whitespace(self):
         """
          Tests that username contains whitespace is not accepted.
